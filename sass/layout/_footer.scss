@@ -4,16 +4,29 @@
   font-size: 1.4rem;
   padding: 10rem 0;
 
+  @include respond(tab-port) {
+    padding: 8rem 0;
+  }
+
   &__copyright {
     border-top: 1px solid $color-gray-dark-2;
     float: right;
     padding-top: 2rem;
     width: 80%;
+
+    @include respond(tab-port) {
+      float: none;
+      width: 100%;
+    }
   }
 
   &__logo-box {
     margin-bottom: 8rem;
     text-align: center;
+
+    @include respond(tab-port) {
+      margin-bottom: 6rem;
+    }
   }
 
   &__logo {
@@ -25,6 +38,11 @@
     border-top: 1px solid $color-gray-dark-2;
     display: inline-block;
     padding-top: 2rem;
+
+    @include respond(tab-port) {
+      text-align: center;
+      width: 100%;
+    }
   }
 
   &__list {

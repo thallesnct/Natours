@@ -10,6 +10,12 @@
   width: 100%;
   z-index: 2500;
 
+  @supports (-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px)) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+  }
+
   &:target {
     opacity: 1;
     visibility: visible;
@@ -50,6 +56,12 @@
     transform: translate(-50%, -50%) scale(.25);
     transition: all .5s .2s;
     width: 75%;
+
+    @include respond(tab-port) {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+    }
   }
 
   &__img {
@@ -61,6 +73,11 @@
     display: table-cell;
     vertical-align: middle;
     width: 33.3333333%;
+
+    @include respond(tab-port) {
+      display: none;
+      width: unset;
+    }
   }
 
   &__right {
@@ -68,6 +85,10 @@
     padding: 3rem 5rem;
     vertical-align: middle;
     width: 66.6666667%;
+
+    @include respond(tab-port) {
+      width: 100%;
+    }
   }
 
   &__text {

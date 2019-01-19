@@ -7,6 +7,7 @@
   position: relative;
 
   &__side {
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     border-radius: .3rem;
     box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
@@ -151,5 +152,52 @@
   &__price-value {
     font-size: 6rem;
     font-weight: 100;
+  }
+
+  // @include respond(tab-port) {
+  @media only screen and (max-width: 56.25em),
+         only screen and (hover:none) {
+    background-color: white;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+    height: auto;
+
+    &__side {
+      border-radius: .3rem;
+      box-shadow: none;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+
+      &--back {
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%); // X Y, X Y, X Y, X Y
+        transform: rotateY(0);
+      }
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__cta {
+      left: 0;
+      padding: 7rem 4rem 4rem 4rem;
+      position: relative;
+      text-align: center;
+      top: 0;
+      transform: translate(0);
+      width: 100%;
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
   }
 }
