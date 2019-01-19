@@ -19,7 +19,7 @@ Then you just run the following command
 
 #### npm run start
 
-## Create build CSS files
+### Create build CSS files
 
 All you got to do is run the following command
 
