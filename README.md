@@ -11,16 +11,16 @@ The design was made by Jonas Schmedtmann (github.com/jonasschmedtmann) for his U
 
 ### Run local server
 
-First you have to install live-server on your machine, if you haven't it installed already
+First you have to install live-server on your machine, if you haven't it installed already, run the following command
 
-#### npm i -g liveserver
+`npm i -g liveserver`
 
 Then you just run the following command
 
-#### npm run start
+`npm run start`
 
 ### Create build CSS files
 
 All you got to do is run the following command
 
-#### npm run build:css
+`npm run build:css`
